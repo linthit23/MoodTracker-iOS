@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Environment(\.modelContext) private var modelContext
+    
     var body: some View {
-        Text("MoodTracker")
-            .font(.largeTitle)
-            .fontWeight(.bold)
+        HomeView(viewModel: MoodViewModel(context: modelContext))
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(for: MoodEntry.self, inMemory: true)
 }
