@@ -25,6 +25,11 @@ struct ContentView: View {
                         .tabItem {
                             Label("History", systemImage: "chart.line.uptrend.xyaxis")
                         }
+                    
+                    SettingsView(viewModel: viewModel)
+                        .tabItem {
+                            Label("Settings", systemImage: "gearshape.fill")
+                        }
                 }
                 .task {
                     await viewModel.setupServices()
