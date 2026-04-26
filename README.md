@@ -1,30 +1,91 @@
-# MoodTracker-iOS
+# MoodTracker iOS 💜
 
-A personal mental health mood tracking app built natively for iOS.
+A native iOS mental health mood tracking app built with Swift and SwiftUI.
 
-## About
-This app helps users logs their daily mood, track emotional patterns over time, and gain insight into their mental wellbeing.
+## Screenshots
 
-Built as a porfortlio  projects to demonstrate modern iOS development practices.
+| Home | Check-In | History | Settings |
+|------|----------|---------|----------|
+| ![Home](Screenshots/home.png) | ![CheckIn](Screenshots/checkin.png) | ![History](Screenshots/history.png) | ![Settings](Screenshots/settings.png) |
 
-## TechStack
-- Swfit & SwiftUI
-- SwiftData (local persistence)
-- Swift Charts (mood trends visualization)
-- HealthKit (mindful minutes & sleep data)
-- Swift Testing with XCTest
-- MVVM Architecture
-- async/await concurrency
+## Overview
 
-## Features (In Progress)
-- [ ] Daily mood check-in with emotion tagging
-- [ ] Short journal entry per check-in
-- [ ] Mood history with charts and trends
-- [ ] HealthKit integration
-- [ ] Daily reminder notifications
+MoodTracker helps users log their daily mood, track emotional 
+patterns over time, and gain insights into their mental wellbeing 
+through beautiful charts and health data integration.
 
-## Status
-Actively in development
+Built as a portfolio project demonstrating modern iOS development 
+practices including SwiftData persistence, HealthKit integration, 
+Swift concurrency and unit testing.
 
-## Author 
-Lin Thit Khant - iOS Developer
+## Features
+
+- 📊 Daily mood check-in with 5 mood levels and emotion tagging
+- 📝 Journal notes per mood entry
+- 📈 Mood trend chart showing last 7 days
+- 🔥 Daily streak tracking
+- 💜 Weekly mood average with progress indicator
+- 🌙 HealthKit integration for sleep and mindfulness data
+- 🔔 Customizable daily reminder notifications
+- 🗑️ Swipe to delete entries
+- ⏰ Time-based greetings
+
+## Tech Stack
+
+- **Language:** Swift 5.9
+- **UI Framework:** SwiftUI
+- **Data Persistence:** SwiftData
+- **Architecture:** MVVM
+- **Concurrency:** async/await with structured concurrency
+- **Charts:** Swift Charts
+- **Health Data:** HealthKit
+- **Notifications:** UserNotifications
+- **Testing:** XCTest with Swift Testing
+
+## Architecture
+
+MoodTracker/
+- Models/
+  - MoodEntry.swift (SwiftData model)
+  - MoodLevel enum (Mood levels with emoji and labels)
+- ViewModels/
+  - MoodViewModel.swift (@Observable ViewModel)
+- Views/
+  - HomeView.swift (Main dashboard)
+  - CheckInView.swift (Mood logging screen)
+  - HistoryView.swift (Charts and history)
+  - SettingsView.swift (Notifications and health settings)
+- Services/
+  - HealthKitService.swift (HealthKit integration)
+  - NotificationService.swift (Local notifications)
+- Tests/
+  - MoodViewModelTests.swift (Unit tests)
+ 
+## Key Technical Decisions
+
+**SwiftData over CoreData** — Chosen for its modern Swift-native
+API and seamless SwiftUI integration using the @Model macro.
+
+**@Observable over ObservableObject** — Modern Swift observation
+framework that eliminates the need for Combine and @Published
+property wrappers.
+
+**async let for parallel fetching** — HealthKit sleep and
+mindfulness data fetched concurrently for better performance.
+
+**In-memory containers for testing** — Unit tests use
+ModelConfiguration(isStoredInMemoryOnly: true) to ensure
+test isolation and never touch production data.
+
+## Requirements
+
+- iOS 17.0+
+- Xcode 15.0+
+- iPhone with Health app for HealthKit features
+
+## Author
+
+**Lin Thit Khant**
+iOS Developer | Swift & SwiftUI | Healthcare Mobile Apps
+
+[![GitHub](https://img.shields.io/badge/GitHub-linthitkhant7-black)](https://github.com/linthitkhant7)
