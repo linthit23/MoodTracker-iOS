@@ -27,4 +27,4 @@ Built as a porfortlio  projects to demonstrate modern iOS development practices.
 Actively in development
 
 ## Author 
-Lin Thit - iOS Developer
+Lin Thit Khant - iOS Developer
